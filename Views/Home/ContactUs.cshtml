@@ -1,0 +1,108 @@
+﻿@model NextGen_Technology.Models.Query
+@{
+    ViewData["Title"] = "ContactUs";
+    var successMessage = TempData["SuccessMessage"] as string;
+}
+
+<head>
+    <style>
+        .form-container{
+            border: 3px solid grey;
+        }
+
+        .space-container{
+            height:30px;
+        }
+
+        .btn {
+            border: none;
+            color: white;
+            margin: 20px;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+            .btn:hover {
+                color: white;
+                background-color: #ffa502;
+            }
+    </style>
+</head>
+<div class="container-fluid p-sm-0 p-md-2 p-lg-3 mt-5">
+    <div class="container space-container"></div>
+    <div class="container form-container d-flex align-items-center justify-content-center flex-column">
+        <h1 class="p-2">Contact Details</h1>
+        <hr/>
+        <form action="Contactus" method="post">
+            <div class="row row-cols-1 row-cols-md-2 g-1 p-1">
+                <div class="col mb-3 ps-md-5 pe-md-5 ps-lg-5 pe-lg-5">
+                    <label for="firstName" class="col-form-label">First Name:</label>
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" asp-for="firstName" >
+                    </div>
+                </div>
+                <div class="col mb-3 ps-md-5 pe-md-5 ps-lg-5 pe-lg-5">
+                    <label for="lastName" class="col-form-label">Last Name:</label>
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" asp-for="lastName" >
+                    </div>
+                </div>
+                <div class="col mb-3 ps-md-5 pe-md-5 ps-lg-5 pe-lg-5">
+                    <label for="country" class="col-form-label">Country:</label>
+                    <div class="col-sm-12">
+                        <select class="form-select" id="country" asp-for="country" >
+                        </select>
+                    </div>
+                </div>
+                <div class="col mb-3 ps-md-5 pe-md-5 ps-lg-5 pe-lg-5">
+                    <label for="city" class="col-form-label">City:</label>
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" asp-for="city" >
+                    </div>
+                </div>
+                <div class="col mb-3 ps-md-5 pe-md-5 ps-lg-5 pe-lg-5">
+                    <label for="phoneNumber" class="col-form-label">Phone Number:</label>
+                    <div class="col-sm-12">
+                        <input type="tel" class="form-control" id="phoneNumber" asp-for="phone" >
+                    </div>
+                </div>
+                <div class="col mb-3 ps-md-5 pe-md-5 ps-lg-5 pe-lg-5">
+                    <label for="email" class="col-form-label">Email:</label>
+                    <div class="col-sm-12">
+                        <input type="email" class="form-control" asp-for="email" >
+                    </div>
+                </div>
+            </div>
+            <div class="p-1  ps-md-5 pe-md-5 ps-lg-5 pe-lg-5">
+                <label for="description" class="col-form-label">Description:</label>
+                <div class="col-sm-12">
+                    <textarea class="form-control" asp-for="description" rows="5" style="width: 100%; max-width: 100%;" ></textarea>
+                </div>
+            </div>
+            <div class="mb-3 row pt-5">
+                <div class="col-12 text-center">
+                    <button onclick="loading()" type="submit" class="btn btn-primary ps-5 pe-5">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    var input = document.querySelector("#phoneNumber");
+    window.intlTelInput(input, {
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+
+    var countryDropdown = document.getElementById("country");
+    var countries = window.intlTelInputGlobals.getCountryData();
+    for (var i = 0; i < countries.length; i++) {
+        var option = document.createElement("option");
+        option.value = countries[i].name
+        option.text = countries[i].name;
+        countryDropdown.add(option);
+    }
+</script>
+
+

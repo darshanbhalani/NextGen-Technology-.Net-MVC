@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NextGen_Technology</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="~/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
+    <script src="~/twitter-bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 3rem); 
+        }
+
+        h2 {
+            font-size: clamp(1.2rem, 4vw, 2.5rem);
+        }
+
+        h3 {
+            font-size: clamp(1rem, 3vw, 2rem);
+        }
+
+        h4 {
+            font-size: clamp(0.9rem, 2.5vw, 1.5rem); 
+        }
+
+        h5 {
+            font-size: clamp(0.8rem, 2vw, 1.2rem); 
+        }
+
+        h6 {
+            font-size: clamp(0.7rem, 1.5vw, 1rem); 
+        }
+
+        p {
+            font-size: clamp(0.6rem, 1.3vw, 1rem) !important; 
+        }
+
+        /* Header */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .bgcolor.scrolled {
+            background-color: #0a3d62 !important;
+        }
+
+        body {
+            background-color: aliceblue;
+            font-size: 16px;
+            font-family: Arial;
+        }
+
+        .navbar-nav {
+            color: whitesmoke;
+        }
+
+        .main-content {
+            width: 100vw;
+        }
+
+        /*Footer*/
+        .footer {
+            background-color: #0a3d62;
+            color: white;
+            text-align: center;
+        }
+
+        .footer-card {
+            max-height:40vh;
+            background-color: transparent;
+            border: none;
+            height: 20vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: whitesmoke;
+        }
+
+        .tc {
+            color:slategrey;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bgcolor">
+            <div class="container">
+                <a class="navbar-brand" href="/">NextGen Technology</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" id="menuIcon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" id="Index">Home</a>
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Technology" id="Technology">Technology</a>
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Careers" id="Careers">Careers</a>
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contactus" id="Contactus">ContactUs</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+    <div class="main-content container-fluid p-0 m-0">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+
+
+    <footer class="border-top footer text-muted p-5">
+        <div class="container-fluid">
+            <div class="p-2">
+            </div>
+            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-4 g-4 m-lg-3">
+                <div class="col">
+                    <div class="card footer-card">
+                        <h4>India</h4>
+                        <p>Ahmedabad (HQ)</p>
+                        <p>+91 7777909916</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card footer-card">
+                        <h4>United States</h4>
+                        <p>New York</p>
+                        <p>+212 7777909916</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card footer-card">
+                        <h4>Australia</h4>
+                        <p>Perth</p>
+                        <p>+61 7777909916</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card footer-card">
+                        <h4>United Kingdom</h4>
+                        <p>London</p>
+                        <p>+20 7777909916</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="tc">copyright | Tems and conditions</p>
+                <p class="tc">Copyrights ©️ 2024 NextGen Technology</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <div class="modal" style="background-color: rgba(0, 0, 0, 0.6);" id="spinner" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered d-flex justify-content-center align-items-center">
+            <div class="spinner-border" style="color: #ffa502;" role="status">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/twitter-bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+
+        $(document).ready(function () {
+            
+            var activeController = "@ViewContext.RouteData.Values["action"]";
+            $('#' + activeController).addClass('active');
+            console.log(activeController);
+            if (window.location.pathname === "/Home/Contactus" || window.location.pathname === "/Home/Careers") {
+                $('nav').addClass('scrolled');
+            }
+        });
+        $(window).scroll(function () {
+            if (window.location.pathname === "/Home/Contactus" || window.location.pathname === "/Home/Careers") {
+                $('nav').toggleClass('scrolled', $(this).scrollTop() > -1);
+            } else {
+                $('nav').toggleClass('scrolled', $(this).scrollTop() > 20);
+            }
+        });
+
+        function f1() {
+            const scrollAmount = 0.95 * window.innerHeight; 
+            window.scrollBy({
+                top: scrollAmount,
+                behavior: "smooth"
+            });
+        }
+
+        var spinnerVisible = false;
+
+        function loading() {
+            var spinner = $("div#spinner");
+            if (!spinnerVisible) {
+                spinner.fadeIn("fast");
+                spinnerVisible = true;
+            } else {
+                spinner.stop().fadeOut("fast");
+                spinnerVisible = false;
+            }
+        };
+    </script>
+
+
+</body>
+</html>

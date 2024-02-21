@@ -1,0 +1,41 @@
+﻿/* Header */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.bgcolor.scrolled {
+    background-color: #0a3d62 !important;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+.navbar-nav {
+    color: whitesmoke;
+}
+
+.main-content {
+    width: 100vw;
+}
+
+/* Footer */
+.footer {
+    background-color: #0a3d62;
+    color: white;
+    text-align: center;
+}
+
+.footer-card {
+    background-color: transparent;
+    border: none;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.tc {
+    color: ghostwhite;
+}
