@@ -3,6 +3,21 @@
 }
 <head>
     <style>
+        /* Search bar */
+        .search-bar-container{
+            margin-top:10vh;
+        }
+        .btn{
+            border: #0a3d62 solid 1px;
+            color: #0a3d62;
+        }
+
+        .btn:hover {
+                border: #ffa502 solid 1px;
+                background-color: #ffa502;
+                color:white;
+        }
+
         .careers-container {
             height: 100vh;
             width: 100vw;
@@ -21,12 +36,19 @@
         }
 
         .careers-container img{
-            width:30vw;
+            width:28vw;
             aspect-ratio:1/1;
         }
 
     </style>
 </head>
+@* Search Bar *@
+<div class="container search-bar-container">
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn" type="submit">Search</button>
+    </form>
+</div>
 <div class="container-fluid careers-container">
     <img src="~/assets/images/nodata.png" />
     <h3>No Job posted yet.</h3>

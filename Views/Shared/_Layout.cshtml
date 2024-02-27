@@ -3,44 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NextGen_Technology</title>
+    <title>NextGen Technology</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link href="~/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
     <script src="~/twitter-bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <style>
-        
-        h1 {
-            font-size: clamp(1.5rem, 5vw, 3rem); 
-        }
-
-        h2 {
-            font-size: clamp(1.2rem, 4vw, 2.5rem);
-        }
-
-        h3 {
-            font-size: clamp(1rem, 3vw, 2rem);
-        }
-
-        h4 {
-            font-size: clamp(0.9rem, 2.5vw, 1.5rem); 
-        }
-
-        h5 {
-            font-size: clamp(0.8rem, 2vw, 1.2rem); 
-        }
-
-        h6 {
-            font-size: clamp(0.7rem, 1.5vw, 1rem); 
-        }
-
-        p {
-            font-size: clamp(0.6rem, 1.3vw, 1rem) !important; 
-        }
 
         /* Header */
         body::-webkit-scrollbar {
@@ -53,7 +27,6 @@
 
         body {
             background-color: aliceblue;
-            font-size: 16px;
             font-family: Arial;
         }
 
@@ -65,6 +38,15 @@
             width: 100vw;
         }
 
+        .nav-link:hover {
+            color: #ffa502 !important;
+        }
+
+        .brand-logo {
+            max-width: 30px;
+            max-height: 40px;
+        }
+
         /*Footer*/
         .footer {
             background-color: #0a3d62;
@@ -73,37 +55,60 @@
         }
 
         .footer-card {
-            max-height:40vh;
+            max-height: 50vh;
             background-color: transparent;
             border: none;
-            height: 20vh;
+            min-height: 20vh;
             display: flex;
             justify-content: center;
             align-items: center;
             color: whitesmoke;
         }
 
+        .footer-logo img {
+            aspect-ratio: 1.8/1;
+            max-width: 20vh;
+            min-width: 200px;
+        }
+
         .tc {
-            color:slategrey;
+            color: slategrey;
+        }
+
+        /*Loader*/
+        .spinner-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spinner-border {
+            color: white;
+            max-height:20vh; 
+            max-width:20vh; 
+            min-height:50px;
+            min-width:50px;
+            aspect-ratio:1/1;
         }
 
     </style>
 </head>
 <body>
 
-
+    @* navbar *@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top bgcolor">
             <div class="container">
-                <a class="navbar-brand" href="/">NextGen Technology</a>
+                <img src="~/logos/logo3-light.png" class="brand-logo d-inline-block align-text-top p-1 m-0">
+                <a class="navbar-brand ps-2" href="/">NextGen Technology</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon" id="menuIcon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto">
                         <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" id="Index">Home</a>
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Technology" id="Technology">Technology</a>
                         <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Careers" id="Careers">Careers</a>
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About" id="About">About</a>
                         <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contactus" id="Contactus">ContactUs</a>
                     </div>
                 </div>
@@ -113,7 +118,7 @@
 
 
 
-
+    @* Main Body *@
     <div class="main-content container-fluid p-0 m-0">
         <main role="main">
             @RenderBody()
@@ -121,36 +126,37 @@
     </div>
 
 
-
+    @* footer *@
     <footer class="border-top footer text-muted p-5">
         <div class="container-fluid">
-            <div class="p-2">
+            <div class="footer-logo">
+                <img src="~/logos/logo4-light.png" />
             </div>
             <div class="row row-cols-2 row-cols-md-4 row-cols-lg-4 g-4 m-lg-3">
                 <div class="col">
                     <div class="card footer-card">
-                        <h4>India</h4>
+                        <h4 class="d-flex">India <span class="ms-1 fi fi-in"></span></h4>
                         <p>Ahmedabad (HQ)</p>
                         <p>+91 7777909916</p>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card footer-card">
-                        <h4>United States</h4>
+                        <h4 class="d-flex">United States<span class="ms-1 fi fi-us"></span></h4>
                         <p>New York</p>
                         <p>+212 7777909916</p>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card footer-card">
-                        <h4>Australia</h4>
+                        <h4 class="d-flex">Australia<span class="ms-1 fi fi-au"></span></h4>
                         <p>Perth</p>
                         <p>+61 7777909916</p>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card footer-card">
-                        <h4>United Kingdom</h4>
+                        <h4 class="d-flex">United Kingdom<span class="ms-1 fi fi-gb"></span></h4>
                         <p>London</p>
                         <p>+20 7777909916</p>
                     </div>
@@ -164,15 +170,30 @@
     </footer>
 
 
-
+     @* loading spiner *@
     <div class="modal" style="background-color: rgba(0, 0, 0, 0.6);" id="spinner" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered d-flex justify-content-center align-items-center">
-            <div class="spinner-border" style="color: #ffa502;" role="status">
-                <span class="sr-only"></span>
+            <div class="spinner-container">
+                <img src="~/logos/logo3-light.png" class="position-absolute brand-logo d-inline-block align-text-top p-1 m-0">
+                <div class="spinner-border" role="status">
+                    <span class="position-relative sr-only"></span>
+                </div>
             </div>
         </div>
     </div>
 
+     @* Website loader *@
+    <div class="modal" style="background-color: white;" id="loader" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered d-flex justify-content-center align-items-center flex-column">
+            <div class="spinner-container">
+                <img src="~/logos/logo3-dark.png" class="position-absolute brand-logo d-inline-block align-text-top p-1 m-0">
+                <div class="spinner-border" role="status" style="color:#0a3d62 !important;">
+                    <span class="position-relative sr-only"></span>
+                </div>
+            </div>
+            <h6 class="pt-2" style="color:dimgray">Please wait...</h6>
+        </div>
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/twitter-bootstrap/js/bootstrap.min.js"></script>
@@ -182,25 +203,25 @@
 
     <script>
 
+        // Navbar background
         $(document).ready(function () {
-            
             var activeController = "@ViewContext.RouteData.Values["action"]";
+           
             $('#' + activeController).addClass('active');
-            console.log(activeController);
-            if (window.location.pathname === "/Home/Contactus" || window.location.pathname === "/Home/Careers") {
+
+            if (window.location.pathname !== "/Home" && window.location.pathname !== "/" && window.location.pathname !== " ") {
                 $('nav').addClass('scrolled');
             }
         });
         $(window).scroll(function () {
-            if (window.location.pathname === "/Home/Contactus" || window.location.pathname === "/Home/Careers") {
-                $('nav').toggleClass('scrolled', $(this).scrollTop() > -1);
-            } else {
-                $('nav').toggleClass('scrolled', $(this).scrollTop() > 20);
+            if (window.location.pathname === "/Home" || window.location.pathname === "/" ) {
+                $(this).scrollTop() > 20 ? $('nav').addClass('scrolled') : $('nav').removeClass('scrolled');
             }
         });
 
+        // Scrool
         function f1() {
-            const scrollAmount = 0.95 * window.innerHeight; 
+            const scrollAmount = 0.95 * window.innerHeight;
             window.scrollBy({
                 top: scrollAmount,
                 behavior: "smooth"
@@ -209,6 +230,7 @@
 
         var spinnerVisible = false;
 
+        // loading spiner
         function loading() {
             var spinner = $("div#spinner");
             if (!spinnerVisible) {
@@ -219,6 +241,28 @@
                 spinnerVisible = false;
             }
         };
+
+        // Website loader
+        $(document).ready(function () {
+            $('#loader').show();
+
+            $(window).on('load', function () {
+                $('#loader').hide();
+            });
+
+            $('#button').click(function () {
+                $('#loader').show();
+                $.ajax({
+                    url: window.location.pathname.toString,
+                    success: function (data) {
+                        $('#loader').hide();
+                    },
+                    error: function () {
+                        $('#loader').hide();
+                    }
+                });
+            });
+        });
     </script>
 
 

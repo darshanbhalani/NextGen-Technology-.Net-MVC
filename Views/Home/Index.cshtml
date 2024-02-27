@@ -24,7 +24,8 @@
         }
 
         .video-container {
-            padding: 0px;
+            padding: 0;
+            margin:0;
             position: relative;
         }
 
@@ -69,8 +70,6 @@
             align-items: center;
         }
 
-        section-2-container {
-        }
 
         .solutions .col .card {
             background-color: #dfe6e9;
@@ -79,7 +78,10 @@
             justify-content: center;
             align-items: center;
             padding: 10%;
+            text-decoration: none;
         }
+
+        
 
             .solutions .col .card:hover {
                 color: white;
@@ -135,7 +137,7 @@
         /* Section-5 */
         .section-5-container {
             height: 70vh;
-            background-image: url('https://storage.cloud.google.com/nextgen_technology/Assets/images/i2.jpg');
+            background-image: url('../Assets/images/i2.jpg');
             background-repeat: no-repeat;
             background-size: cover;
             color: white;
@@ -203,7 +205,7 @@
     <!-- Section-1 -->
     <div class="container-fluid video-container">
         <video class="background-video" autoplay muted loop>
-            <source src="https://storage.cloud.google.com/nextgen_technology/Assets/videos/main.mp4" type="video/mp4">
+            <source src="~/Assets/videos/main.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="video-overlay"></div>
@@ -224,59 +226,60 @@
             </h6>
             <div class="container solutions ps-md-3 pe-md-3 ps-lg-3 pe-lg-3 pt-3">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 m-lg-3">
+                    
                     <div class="col">
-                        <div class="card">
-                            <img src="https://storage.cloud.google.com/nextgen_technology/Assets/icons/icon1.png" />
+                        <a class="card" asp-controller="Solutions" asp-action="Index">
+                            <img src="~/Assets/icons/icon1.png" />
                             <h4>Web Applications</h4>
-                        </div>
+                        </a>
                     </div>
                     <div class="col">
-                        <div class="card">
-                            <img src="https://storage.cloud.google.com/nextgen_technology/Assets/icons/icon2.png" />
+                        <a class="card" asp-controller="Solutions" asp-action="Index">
+                            <img src="~/Assets/icons/icon2.png" />
                             <h4>Mobile Applications</h4>
-                        </div>
+                        </a>
                     </div>
                     <div class="col">
-                        <div class="card">
-                            <img src="https://storage.cloud.google.com/nextgen_technology/Assets/icons/icon3.png" />
+                        <a class="card" asp-controller="Solutions" asp-action="Index">
+                            <img src="~/Assets/icons/icon3.png" />
                             <h4>Softwares</h4>
-                        </div>
+                        </a>
                     </div>
                     <div class="col">
-                        <div class="card">
-                            <img src="https://storage.cloud.google.com/nextgen_technology/Assets/icons/icon4.png" />
+                        <a class="card" asp-controller="Solutions" asp-action="Index">
+                            <img src="~/Assets/icons/icon3.png" />
                             <h4>Cloud Solutions</h4>
-                        </div>
+                        </a>
                     </div>
                     <div class="col">
-                        <div class="card">
-                            <img src="https://storage.cloud.google.com/nextgen_technology/Assets/icons/icon5.png" />
+                        <a class="card" asp-controller="Solutions" asp-action="Index">
+                            <img src="~/Assets/icons/icon3.png" />
                             <h4>Cybersecurity</h4>
-                        </div>
+                        </a>
                     </div>
                     <div class="col">
-                        <div class="card">
-                            <img src="https://storage.cloud.google.com/nextgen_technology/Assets/icons/icon6.png" />
+                        <a class="card" asp-controller="Solutions" asp-action="Index">
+                            <img src="~/Assets/icons/icon3.png" />
                             <h4>AI and ML</h4>
-                        </div>
+                        </a>
                     </div>
                     <div class="col">
-                        <div class="card">
-                            <img src="https://storage.cloud.google.com/nextgen_technology/Assets/icons/icon7.png" />
+                        <a class="card" asp-controller="Solutions" asp-action="Index">
+                            <img src="~/Assets/icons/icon3.png" />
                             <h4>IOT</h4>
-                        </div>
+                        </a>
                     </div>
                     <div class="col">
-                        <div class="card">
-                            <img src="https://storage.cloud.google.com/nextgen_technology/Assets/icons/icon8.png" />
+                        <a class="card" asp-controller="Solutions" asp-action="Index">
+                            <img src="~/Assets/icons/icon3.png" />
                             <h4>Dedicated Team</h4>
-                        </div>
+                        </a>
                     </div>
                     <div class="col">
-                        <div class="card">
-                            <img src="https://storage.cloud.google.com/nextgen_technology/Assets/icons/icon9.png" />
+                        <a class="card" asp-controller="Solutions" asp-action="Index">
+                            <img src="~/Assets/icons/icon3.png" />
                             <h4>Production</h4>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -294,7 +297,7 @@
                 <div class="col">
                     <div class="card">
                         <video class="" autoplay muted loop>
-                            <source src="https://storage.cloud.google.com/nextgen_technology/Assets/videos/v1.mp4" type="video/mp4">
+                            <source src="~/Assets/videos/v1.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <div class="card-body">
@@ -306,7 +309,7 @@
                 <div class="col">
                     <div class="card">
                         <video class="" autoplay muted loop>
-                            <source src="https://storage.cloud.google.com/nextgen_technology/Assets/videos/v2.mp4" type="video/mp4">
+                            <source src="~/Assets/videos/v2.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <div class="card-body">
@@ -318,7 +321,7 @@
                 <div class="col">
                     <div class="card">
                         <video class="" autoplay muted loop>
-                            <source src="https://storage.cloud.google.com/nextgen_technology/Assets/videos/v3.mp4" type="video/mp4">
+                            <source src="~/Assets/videos/v3.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <div class="card-body">
@@ -330,7 +333,7 @@
                 <div class="col">
                     <div class="card">
                         <video class="" autoplay muted loop>
-                            <source src="https://storage.cloud.google.com/nextgen_technology/Assets/videos/v4.mp4" type="video/mp4">
+                            <source src="~/Assets/videos/v4.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <div class="card-body">
@@ -355,7 +358,7 @@
             </div>
             <div class="col">
                 <div class="card bg-transparent border-0">
-                    <img src="https://storage.cloud.google.com/nextgen_technology/Assets/images/i1.jpg" style="max-height: 65vh; max-width: 100vw;" />
+                    <img src="~/Assets/images/i1.jpg" style="max-height: 65vh; max-width: 100vw;" />
                 </div>
             </div>
         </div>
@@ -376,26 +379,25 @@
             <p>In the dynamic landscape of business, our company thrives on collaboration with industry leaders such as Amazon, Google, and more. We take pride in fostering strategic partnerships that propel us towards excellence, ensuring innovative solutions and a shared commitment to success.</p>
         </div>
         <div class="section-6">
-                <img src="https://storage.cloud.google.com/nextgen_technology/Assets/images/i3.jpg" />
-                <img src="https://storage.cloud.google.com/nextgen_technology/Assets/images/i4.jpg" />
-                <img src="https://storage.cloud.google.com/nextgen_technology/Assets/images/i5.png" />
-                <img src="https://storage.cloud.google.com/nextgen_technology/Assets/images/i6.png" />
-                <img src="https://storage.cloud.google.com/nextgen_technology/Assets/images/i7.png" />
-                <img src="https://storage.cloud.google.com/nextgen_technology/Assets/images/i8.png" />
-                <img src="https://storage.cloud.google.com/nextgen_technology/Assets/images/i9.png" />
-                <img src="https://storage.cloud.google.com/nextgen_technology/Assets/images/i10.png" />
-                <img src="https://storage.cloud.google.com/nextgen_technology/Assets/images/i11.png" />
-                <img src="https://storage.cloud.google.com/nextgen_technology/Assets/images/i12.jpg" />
-                <img src="https://storage.cloud.google.com/nextgen_technology/Assets/images/i13.jpg" />
-                <img src="https://storage.cloud.google.com/nextgen_technology/Assets/images/i14.jpg" />
+                <img src="~/Assets/images/i3.jpg" />
+                <img src="~/Assets/images/i4.jpg" />
+                <img src="~/Assets/images/i5.png" />
+                <img src="~/Assets/images/i6.png" />
+                <img src="~/Assets/images/i7.png" />
+                <img src="~/Assets/images/i8.png" />
+                <img src="~/Assets/images/i9.png" />
+                <img src="~/Assets/images/i10.png" />
+                <img src="~/Assets/images/i11.png" />
+                <img src="~/Assets/images/i12.jpg" />
+                <img src="~/Assets/images/i13.jpg" />
+                <img src="~/Assets/images/i14.jpg" />
         </div>
-
     </div>
 
     <!-- Section-7 -->
     <div class="section-7-container container-fluid position-relative">
         <video class="section-7-video" autoplay muted loop>
-            <source src="https://storage.cloud.google.com/nextgen_technology/Assets/videos/v6.mp4" type="video/mp4">
+            <source src="~/Assets/videos/v6.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="video-overlay"></div>

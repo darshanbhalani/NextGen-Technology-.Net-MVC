@@ -49,6 +49,11 @@ namespace NextGen_Technology.Controllers
             return View();
         }
 
+        public IActionResult About()
+        {
+            return View();
+        }
+
         public IActionResult Error(int? statusCode = null)
         {
             if (statusCode.HasValue && statusCode == 404)
