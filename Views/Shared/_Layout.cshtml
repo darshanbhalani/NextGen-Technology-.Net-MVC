@@ -84,11 +84,11 @@
 
         .spinner-border {
             color: white;
-            max-height:20vh; 
-            max-width:20vh; 
-            min-height:50px;
-            min-width:50px;
-            aspect-ratio:1/1;
+            max-height: 20vh;
+            max-width: 20vh;
+            min-height: 50px;
+            min-width: 50px;
+            aspect-ratio: 1/1;
         }
 
     </style>
@@ -170,7 +170,7 @@
     </footer>
 
 
-     @* loading spiner *@
+    @* loading spiner *@
     <div class="modal" style="background-color: rgba(0, 0, 0, 0.6);" id="spinner" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered d-flex justify-content-center align-items-center">
             <div class="spinner-container">
@@ -182,7 +182,7 @@
         </div>
     </div>
 
-     @* Website loader *@
+    @* Website loader *@
     <div class="modal" style="background-color: white;" id="loader" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered d-flex justify-content-center align-items-center flex-column">
             <div class="spinner-container">
@@ -193,6 +193,10 @@
             </div>
             <h6 class="pt-2" style="color:dimgray">Please wait...</h6>
         </div>
+    </div>
+
+    @* snackbar *@
+    <div id="snackbar" class="text-white text-center position-fixed bottom-0 start-50 translate-middle-x p-3 rounded-3" style="display: none;">
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -206,20 +210,22 @@
         // Navbar background
         $(document).ready(function () {
             var activeController = "@ViewContext.RouteData.Values["action"]";
-           
+
             $('#' + activeController).addClass('active');
 
             if (window.location.pathname !== "/Home" && window.location.pathname !== "/" && window.location.pathname !== " ") {
                 $('nav').addClass('scrolled');
             }
         });
+
         $(window).scroll(function () {
-            if (window.location.pathname === "/Home" || window.location.pathname === "/" ) {
+            if (window.location.pathname === "/Home" || window.location.pathname === "/") {
                 $(this).scrollTop() > 20 ? $('nav').addClass('scrolled') : $('nav').removeClass('scrolled');
             }
         });
 
-        // Scrool
+
+        // Scroll
         function f1() {
             const scrollAmount = 0.95 * window.innerHeight;
             window.scrollBy({
@@ -241,7 +247,11 @@
                 spinnerVisible = false;
             }
         };
-
+        function loadingClose() {
+            var spinner = $("div#spinner");
+            spinner.stop().fadeOut("fast");
+            spinnerVisible = false;
+        };
         // Website loader
         $(document).ready(function () {
             $('#loader').show();
@@ -263,8 +273,24 @@
                 });
             });
         });
+
+        
+
+                
+
+        function showSnackbar(status, message) {
+            console.log("snackbar");
+            if (status === "true") {
+                $('#snackbar').addClass('bg-success');
+            } else {
+                $('#snackbar').addClass('bg-danger');
+            }
+            var snackbar = document.getElementById("snackbar");
+            snackbar.textContent = message;
+            snackbar.style.display = "block";
+            setTimeout(function () { snackbar.style.display = "none"; }, 3000);
+        }
+
     </script>
-
-
 </body>
 </html>

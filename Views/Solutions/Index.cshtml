@@ -7,7 +7,7 @@
         .section-1-container {
             padding: 0;
             margin: 0;
-            margin-top:50px;
+            margin-top: 50px;
         }
 
         .section-1-video {
@@ -20,36 +20,36 @@
         /* section-2 */
         .section-2-container {
             background-color: #dfe6e9;
-            width:100vw;
-            min-height:60vh;
+            width: 100vw;
+            min-height: 60vh;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             text-align: center;
-            padding:10px;
+            padding: 10px;
         }
 
             .section-2-container > .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction:column;
-        }
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
 
         /* section-3 */
         .section-3-container {
             display: flex;
             justify-content: center;
             align-items: center;
-           padding-top:10px;
-           text-align:center;
+            padding-top: 10px;
+            text-align: center;
         }
 
         .carousel-item > img, .section-3-container {
             min-width: 60vw;
             max-width: 70vw;
-            aspect-ratio:2/1;
+            aspect-ratio: 2/1;
             object-fit: cover;
         }
 
@@ -63,16 +63,18 @@
             color: #0a3d62;
         }
 
-            .btn:hover{
+            .btn:hover {
                 border: #ffa502 solid 1px;
                 background-color: #ffa502;
             }
-             .btn:hover > a{
-                color: white;
+
+                .btn:hover > a {
+                    color: white;
+                }
+
+            .btn > a {
+                text-decoration: none;
             }
-        .btn > a{
-            text-decoration:none;
-        }
     </style>
 </head>
 <body>
@@ -97,45 +99,82 @@
         </div>
     </div>
 
-   @* Section 3 *@
-    <div class="container section-3-container">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 3"></button>
+    @* Section 3 *@
+    @*  <div class="container section-3-container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+    <div class="carousel-item active">
+    <img src="~/assets/images/s1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+    <img src="~/assets/images/s2.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+    <img src="~/assets/images/s3.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+    <img src="~/assets/images/s4.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+    <img src="~/assets/images/s5.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+    <img src="~/assets/images/s6.jpg" class="d-block w-100" alt="...">
+    </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+    </div> *@
+
+    <div class="container-fluid counter-container m-0 p-0" id="counter" style="background-color: #ffa502;">
+        <div class="row row-cols-2 row-cols-md-4 g-2 p-1">
+            <div class="col">
+                <div class="card" style="border: none; min-height: 20vh; display: flex; align-items: center; justify-content: center; background-color: transparent;">
+                    <h2>
+                        <div class="counter" data-target="1150">0</div>
+                    </h2>
+                    <h6>Projects</h6>
+                </div>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="~/assets/images/s1.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="~/assets/images/s2.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="~/assets/images/s3.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="~/assets/images/s4.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="~/assets/images/s5.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="~/assets/images/s6.jpg" class="d-block w-100" alt="...">
+            <div class="col">
+                <div class="card" style="border: none; min-height: 20vh; display: flex; align-items: center; justify-content: center; background-color: transparent;">
+                    <h2>
+                        <div class="counter" data-target="430">0</div>
+                    </h2>
+                    <h6>Clients</h6>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <div class="col">
+                <div class="card" style="border: none; min-height: 20vh; display: flex; align-items: center; justify-content: center; background-color: transparent;">
+                    <h2>
+                        <div class="counter" data-target="150">0</div>
+                    </h2>
+                    <h6>Countries</h6>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="border: none; min-height: 20vh; display: flex; align-items: center; justify-content: center; background-color: transparent;">
+                    <h2>
+                        <div class="counter" data-target="210">0</div>
+                    </h2>
+                    <h6>Sectors</h6>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -152,3 +191,54 @@
         <button class="btn" type="submit"><a asp-controller="Home" asp-action="Contactus">Contact Us</a></button>
     </div>
 </div>
+
+@section scripts {
+    <script>
+        var flag = false;
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+        window.addEventListener("scroll", function (event) {
+            var myDiv = document.getElementById("counter");
+
+            if (isElementInViewport(myDiv)) {
+                if (!flag) {
+                    console.log("ok done");
+                    counterStart();
+                }
+                
+            }
+        });
+
+        function counterStart() {
+            flag = true;
+            const counters = document.querySelectorAll('.counter');
+            const speed = 300;
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.round(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target + '+';
+                    }
+                };
+
+                updateCount();
+            });
+        }
+
+    </script>
+}

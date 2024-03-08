@@ -29,60 +29,61 @@
             }
     </style>
 </head>
+<body>
 <div class="container-fluid p-sm-0 p-md-2 p-lg-3 mt-5">
     <div class="container space-container"></div>
     <div class="container form-container d-flex align-items-center justify-content-center flex-column">
         <h1 class="p-2">Contact Details</h1>
         <hr/>
-        <form action="Contactus" method="post">
+        <form id="contact-form" action="Contactus" method="post" >
             <div class="row row-cols-1 row-cols-md-2 g-1 p-1">
                 <div class="col mb-3 ps-md-5 pe-md-5 ps-lg-5 pe-lg-5">
                     <label for="firstName" class="col-form-label">First Name:</label>
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" asp-for="firstName" >
+                            <input id="firstName" type="text" class="form-control" asp-for="firstName">
                     </div>
                 </div>
                 <div class="col mb-3 ps-md-5 pe-md-5 ps-lg-5 pe-lg-5">
                     <label for="lastName" class="col-form-label">Last Name:</label>
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" asp-for="lastName" >
+                        <input id="lastName" type="text" class="form-control" asp-for="lastName">
                     </div>
                 </div>
                 <div class="col mb-3 ps-md-5 pe-md-5 ps-lg-5 pe-lg-5">
                     <label for="country" class="col-form-label">Country:</label>
                     <div class="col-sm-12">
-                        <select class="form-select" id="country" asp-for="country" >
+                        <select class="form-select" id="country" asp-for="country">
                         </select>
                     </div>
                 </div>
                 <div class="col mb-3 ps-md-5 pe-md-5 ps-lg-5 pe-lg-5">
                     <label for="city" class="col-form-label">City:</label>
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" asp-for="city" >
+                        <input type="text" id="city" class="form-control" asp-for="city">
                     </div>
                 </div>
                 <div class="col mb-3 ps-md-5 pe-md-5 ps-lg-5 pe-lg-5">
                     <label for="phoneNumber" class="col-form-label">Phone Number:</label>
                     <div class="col-sm-12">
-                        <input type="tel" class="form-control" id="phoneNumber" asp-for="phone" >
+                        <input id="phoneNumber" type="tel" class="form-control" id="phoneNumber" asp-for="phone">
                     </div>
                 </div>
                 <div class="col mb-3 ps-md-5 pe-md-5 ps-lg-5 pe-lg-5">
                     <label for="email" class="col-form-label">Email:</label>
                     <div class="col-sm-12">
-                        <input type="email" class="form-control" asp-for="email" >
+                        <input id="email" type="email" class="form-control" asp-for="email">
                     </div>
                 </div>
             </div>
             <div class="p-1  ps-md-5 pe-md-5 ps-lg-5 pe-lg-5">
                 <label for="description" class="col-form-label">Description:</label>
                 <div class="col-sm-12">
-                    <textarea class="form-control" asp-for="description" rows="5" style="width: 100%; max-width: 100%;" ></textarea>
+                        <textarea id="description" class="form-control" asp-for="description" rows="5" style="width: 100%; max-width: 100%;"></textarea>
                 </div>
             </div>
             <div class="mb-3 row pt-5">
                 <div class="col-12 text-center">
-                    <button onclick="loading()" type="submit" class="btn btn-primary ps-5 pe-5">Submit</button>
+                        <button id="submit-btn" type="submit" class="btn btn-primary ps-5 pe-5">Submit</button>
                 </div>
             </div>
         </form>
@@ -90,6 +91,7 @@
 </div>
 
 <script>
+
     var input = document.querySelector("#phoneNumber");
     window.intlTelInput(input, {
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
@@ -103,6 +105,89 @@
         option.text = countries[i].name;
         countryDropdown.add(option);
     }
+    
 </script>
 
+</body>
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('#contact-form').submit(function (e) {
+                e.preventDefault(); 
+                loading();
 
+                var firstName = $('#firstName').val().trim();
+                var lastName = $('#lastName').val().trim();
+                var country = $('#country').val().trim();
+                var city = $('#city').val().trim();
+                var phone = $('#phoneNumber').val().trim();
+                var email = $('#email').val().trim();
+                var description = $('#description').val().trim();
+
+                if (firstName === '' && firstName.length < 3) {
+                    loading();
+                    showSnackbar("false", "Please enter valid first name...");
+                    return; 
+                }
+                if (lastName === '' && lastName.length < 3) {
+                    loading();
+                    showSnackbar("false", "Please enter valid last name...");
+                    return; 
+                }
+                if (country === '') {
+                    loading();
+                    showSnackbar("false", "Please select valid country...");
+                    return;
+                }
+
+                if (city === '' && lastName.length < 3) {
+                    loading();
+                    showSnackbar("false", "Please enter valid city name...");
+                    return;
+                }
+
+                if (phone === '') {
+                    loading();
+                    showSnackbar("false", "Please enter valid phone number...");
+                    return; 
+                }
+                if (email === '') {
+                    loading();
+                    showSnackbar("false", "Please enter valid email...");
+                    return; 
+                }
+                if (description === '' && description.length < 10) {
+                    loading();
+                    showSnackbar("false", "Please enter valid description...");
+                    return; 
+                }
+
+                var formData = {
+                    firstName: firstName,
+                    lastName: lastName,
+                    country: country,
+                    city: city,
+                    phone: phone,
+                    email: email,
+                    description: description
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/Home/Contactus',
+                    data: formData,
+                  
+                    success: function (response) {
+                        loading();
+                        showSnackbar("true", "Thank you! Your responce has been successfully submitted.Our team will reach you as soon as possible.");
+                        $("#contact-form")[0].reset();
+                    },
+                    error: function () {
+                        loading();
+                        showSnackbar("false", "Something went wrong !")
+                    }
+                });
+            });
+        });
+    </script>
+}

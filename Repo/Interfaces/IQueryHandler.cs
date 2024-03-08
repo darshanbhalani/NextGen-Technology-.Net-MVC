@@ -1,10 +1,11 @@
 ﻿using NextGen_Technology.Models;
+using NextGen_Technology.Repo.Classes;
 
 namespace NextGen_Technology.Repo.Interfaces
 {
     public interface IQueryHandler
     {
-        void saveData(Query data);
+        Status saveData(Query data);
         void sendEmailToClient(Query data);
         void sendEmailToAdmin();
     }

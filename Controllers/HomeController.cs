@@ -31,17 +31,13 @@ namespace NextGen_Technology.Controllers
         }
 
         [HttpPost]
-        public IActionResult Contactus(Query data)
+        public async Task<IActionResult> Contactus(Query data)
         {
-            if(ModelState.IsValid)
-            {
-                _queryHandler.saveData(data);
-                TempData["SuccessMessage"] = "Record saved successfully.";
-                _queryHandler.sendEmailToClient(data);
-                ModelState.Clear();
-            }
+            
+             _queryHandler.saveData(data);
+            _queryHandler.sendEmailToClient(data);
 
-            return View();
+            return Json(new { success = true, message = "Login successful" });
         }
 
         public IActionResult Careers()

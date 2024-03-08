@@ -1,16 +1,20 @@
 ﻿using NextGen_Technology.Models;
 using NextGen_Technology.Repo.Interfaces;
-using System.Configuration;
-using System.Drawing.Text;
 using Npgsql;
 using System.Net.Mail;
 using System.Net;
 
 namespace NextGen_Technology.Repo.Classes
 {
+    public enum Status
+    {
+        Success,
+        Failed,
+    }
     public class QueryHandler : IQueryHandler
     {
-        public void saveData(Query data)
+        
+        public Status saveData(Query data)
         {
             DBConfiguration dbConfiguration = new DBConfiguration
             {
@@ -33,7 +37,7 @@ namespace NextGen_Technology.Repo.Classes
                     cmd.ExecuteNonQuery();
                 }
             }
-
+            return Status.Success;
         }
         public void sendEmailToClient(Query data)
         {

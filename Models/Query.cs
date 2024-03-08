@@ -5,27 +5,29 @@ namespace NextGen_Technology.Models
 {
     public class Query
     {
-        [BindProperty]
-        public string firstName {  get; set; }
-        [BindProperty]
-        
+
+
+        [StringLength(20,MinimumLength = 3)]
+        public string firstName { get; set; }
+
+        [StringLength(20, MinimumLength = 3)]
         public string lastName { get; set; }
-        [BindProperty]
         
+       
         public string country { get; set; }
-        [BindProperty]
-        
+
+        [StringLength(20, MinimumLength = 3)]
         public string city { get; set; }
-        [BindProperty]
+
         
         public string phone { get; set; }
-        [BindProperty]
-        
+
+      
         public string email { get; set; }
-        [BindProperty]
-        
+
+        [StringLength(2000, MinimumLength = 10)]
         public string description { get; set;}
-        [BindProperty]
-        public DateTime time { get; set; }
+        
+        public DateTime? time { get; set; }
     }
 }
