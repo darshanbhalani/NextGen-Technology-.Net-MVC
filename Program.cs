@@ -1,3 +1,5 @@
+using System.Configuration;
+
 namespace NextGen_Technology
 {
     public class Program
